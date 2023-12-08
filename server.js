@@ -6,7 +6,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: 'http://192.168.1.132:5173',
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   },
@@ -14,7 +14,7 @@ const io = new Server(server, {
 
 // Configura los encabezados de CORS
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://192.168.1.132:5173');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
